@@ -37,11 +37,16 @@ class ElecticCar(Car):
     def __init__(self, make, model, year):
         # инициализация атрибутов родительского класса
         super().__init__(make, model, year)
+        self.battery_size = 40
 
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}-kWh battery")
 
 my_tesla = ElecticCar('tesla', 'supermodel', 2020)
 
 print(my_tesla.get_descriptive_name())
+
+my_tesla.describe_battery()
 
 # my_new_car = Car('audi', 'a4', 2024)
 
