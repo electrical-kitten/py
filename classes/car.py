@@ -32,22 +32,42 @@ class Car:
         self.odometer_reading += miles
 
 
+class Battery:
+
+    '''Простая попытка смоделировать батарею для electric car'''
+
+    def __init__(self, battery_size=40):
+
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}-kWh battery")
+        
+
 class ElecticCar(Car):
 
     def __init__(self, make, model, year):
         # инициализация атрибутов родительского класса
         super().__init__(make, model, year)
-        self.battery_size = 40
+        self.battery = Battery()
 
-    def describe_battery(self):
-        print(f"This car has a {self.battery_size}-kWh battery")
+    # def describe_battery(self):
+    #     print(f"This car has a {self.battery_size}-kWh battery")
+
+    def fill_gas_tank(self):
+        print("This car doesn't have a gas tank")
+
+
+
+
 
 my_tesla = ElecticCar('tesla', 'supermodel', 2020)
 
 print(my_tesla.get_descriptive_name())
 
-my_tesla.describe_battery()
+my_tesla.battery.describe_battery()
 
+my_tesla.fill_gas_tank()
 # my_new_car = Car('audi', 'a4', 2024)
 
 # print(my_new_car.get_descriptive_name())
