@@ -1,41 +1,24 @@
-# class Restaurant:
+class Restaurant:
 
-#     def __init__(self, restaurant_name, cuisine_type):
+    def __init__ (self, restaurant_name, cuisine_type):
 
-#         self.restaurant_name = restaurant_name
-#         self.cuisine_type = cuisine_type
-#         self.number_served = 0
+        self.rest_name = restaurant_name.title()
+        self.cuisine = cuisine_type
+        self.clients_served = 0
 
-#     def describe_restaurant(self):
-#         print(f"Welcome to {self.restaurant_name.title()
-#                             }! We serve {self.cuisine_type} cuisine!")
+    def describe_restaurant(self):
+        print(f"{self.rest_name} is now open")
 
-#     def open_restaurant(self):
-#         print(f"{self.restaurant_name.title()} is open!")
+    def set_number_served(self, clients_number):
+        self.clients_served = clients_number
 
-#     def set_number_served(self):
-#         """посмотреть количество обслуженых клиентов"""
-
-#         print(f"There are {self.number_served} guests served")
-
-#     def increment_number_served(self, number):
-#         """прибавить количество обслуженых гостей"""
-
-#         self.number_served += number
-
-# # first_restaurant = Restaurant('saviv', 'isralian')
-# # second_rest = Restaurant('futura', 'european')
-# # third_rest = Restaurant('22cm', 'italian')
-
-# # first_restaurant.describe_restaurant()
-# # first_restaurant.open_restaurant()
-
-# # second_rest.describe_restaurant()
-# # third_rest.describe_restaurant()
+first_rest = Restaurant('saviv', 'isralian')
+second_rest = Restaurant('fahrenheit', 'european')
 
 
-# restaurant = Restaurant('saviv', 'isralian')
-# restaurant.number_served = 79
-# restaurant.set_number_served()
-# restaurant.increment_number_served(10)
-# restaurant.set_number_served()
+first_rest.describe_restaurant()
+second_rest.describe_restaurant()
+
+print(first_rest.clients_served)
+first_rest.set_number_served(19)
+print(first_rest.clients_served)
