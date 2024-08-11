@@ -20,8 +20,23 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+class Privileges:
+
+    def __init__(self):
+        self.privileges = ['can add post', 'can delete post', 'can ban user']
+ 
+
+    def show_privileges(self):
+        print(f"Admin {self.privileges[0]}, {self.privileges[2]}, {self.privileges[1]}")
+
+class Admin:
+    def __init__(self):
+
+        self.admin_priv = Privileges()
+
 user1 = User('Vladislav', 'Begunkov', 32, 'example@gmail.com')
 user2 = User('Bla', 'Blakov', 40, 'example2222@gmail.com')
+admin = Admin()
 
 # user1.describe_user()
 # user2.describe_user()
@@ -29,9 +44,11 @@ user2 = User('Bla', 'Blakov', 40, 'example2222@gmail.com')
 # user1.greet_user()
 # user2.greet_user()
 
-user1.increment_login_attempts()
-user1.increment_login_attempts()
-user1.increment_login_attempts()
-print(user1.login_attempts)
-user1.reset_login_attempts()
-print(user1.login_attempts)
+# user1.increment_login_attempts()
+# user1.increment_login_attempts()
+# user1.increment_login_attempts()
+# print(user1.login_attempts)
+# user1.reset_login_attempts()
+# print(user1.login_attempts)
+
+admin.admin_priv.show_privileges()
