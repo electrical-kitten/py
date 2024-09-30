@@ -1,4 +1,4 @@
-from name_function import get_fromatted_name
+from name_test import get_fromatted_name
 
 print("Enter 'q' ata any time to quit.")
 
