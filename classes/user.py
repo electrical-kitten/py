@@ -16,7 +16,7 @@ class User:
 
     def increment_login_attempts(self):
         self.login_attempts += 1
-    
+
     def reset_login_attempts(self):
         self.login_attempts = 0
 
@@ -24,7 +24,7 @@ class Privileges:
 
     def __init__(self):
         self.privileges = ['can add post', 'can delete post', 'can ban user']
- 
+
 
     def show_privileges(self):
         print(f"Admin {self.privileges[0]}, {self.privileges[2]}, {self.privileges[1]}")
